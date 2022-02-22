@@ -46,21 +46,21 @@ def handle_text(message):
     if message.text.lower()[:6] == 'search':
         if not str(message.text) in searches_message:
             searches = open('save.txt', 'a')
-            searches.write(str(f'firstname:{message.from_user.first_name} lastname:{message.from_user.last_name} username:{message.from_user.username} id:{message.from_user.id} запрос поиска:[|{message.text[7:]}|]'))
+            searches.write(str(f'firstname:{message.from_user.first_name} lastname:{message.from_user.last_name} username:{message.from_user.username} id:{message.from_user.id} запрос поиска:[|{message.text[7:]}|]\n'))
             searches.close()
         wikipedia.set_lang("en")
         bot.send_message(message.chat.id, getwiki(message.text))
     if message.text.lower()[:5] == 'поиск':
         if not str(message.text) in searches_message:
             searches = open('save.txt', 'a')
-            searches.write(str(f'firstname:{message.from_user.first_name} lastname:{message.from_user.last_name} username:{message.from_user.username} id:{message.from_user.id} запрос поиска:[|{message.text[6:]}|]'))
+            searches.write(str(f'firstname:{message.from_user.first_name} lastname:{message.from_user.last_name} username:{message.from_user.username} id:{message.from_user.id} запрос поиска:[|{message.text[6:]}|]\n'))
             searches.close()
         wikipedia.set_lang("ru")
         bot.send_message(message.chat.id, getwiki(message.text[5:]))
     if message.text.lower()[:5] == 'пошук':
         if not str(message.text) in searches_message:
             searches = open('save.txt', 'a')
-            searches.write(str(f'firstname:{message.from_user.first_name} lastname:{message.from_user.last_name} username:{message.from_user.username} id:{message.from_user.id} запрос поиска:[|{message.text[6:]}|]'))
+            searches.write(str(f'firstname:{message.from_user.first_name} lastname:{message.from_user.last_name} username:{message.from_user.username} id:{message.from_user.id} запрос поиска:[|{message.text[6:]}|]\n'))
             searches.close()
         wikipedia.set_lang("uk")
         bot.send_message(message.chat.id, getwiki(message.text))
